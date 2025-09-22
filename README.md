@@ -80,16 +80,16 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 
 
-df = pd.read_csv("/content/archive (6).zip", encoding="latin-1")
+df = pd.read_csv("/content/AI EX1 SPAM .zip", encoding="latin-1")
 df = df[['v1', 'v2']] 
 df.columns = ['label', 'message']
 
 
-df['label_num'] = df.label.map({'ham':0, 'spam':1})
+df['label_num'] = df.label.map({'ham':1, 'spam':3})
 
 
 X_train, X_test, y_train, y_test = train_test_split(
-    df['message'], df['label_num'], test_size=0.2, random_state=42
+    df['message'], df['label_num'], test_size=0.3, random_state=45
 )
 
 
